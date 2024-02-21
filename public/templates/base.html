@@ -43,9 +43,9 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				{% set navigation_bar = [ ('/i/{{ page_lang }}', 'home', 'Home'), ('/i/{{ page_lang }}/who_we_are',
-				'who_we_are', 'Who We Are'), ('/i/{{ page_lang }}/how_to_use', 'how_to_use', 'How To
-				Use'), ('/i/{{ page_lang }}/order_now', 'order_now', 'Order Now'), ('/i/{{ page_lang }}/contact_us',
+				{% set navigation_bar = [ (f'/i/{page_lang}', 'home', 'Home'), (f'/i/{page_lang}/who_we_are',
+				'who_we_are', 'Who We Are'), (f'/i/{page_lang}/how_to_use', 'how_to_use', 'How To
+				Use'), (f'/i/{page_lang}/order_now', 'order_now', 'Order Now'), (f'/i/{page_lang}/contact_us',
 				'contact_us', 'Contact Us') ] -%} {%
 				set
 				active_page = active_page|default('home') -%}
