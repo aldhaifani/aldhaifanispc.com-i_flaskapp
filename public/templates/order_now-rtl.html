@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-rtl.html" %}
 
 {% set meta_description = "اطلب سوبر جل الآن" %}
 
@@ -15,7 +15,7 @@
 {% if message == "تم تقديم الطلب بنجاح! سنتواصل معك بأقرب وقت ممكن." or message == "فشل في تقديم طلبك! يرجى المحاولة مرة
 أخرى أو الاتصال بنا +968-90620008." %}
 <div class="container">
-  <div class="alert alert-{{ category }} flash-container" role="alert">
+  <div class="alert alert-{{ category }} flash-container text-right" role="alert">
     {{ message }}
   </div>
 </div>
@@ -26,7 +26,7 @@
 <div class="container">
   <div class="container order_form">
     <form class="row g-3 needs-validation" method="post" novalidate>
-      <label class="form-label">سوبر جل 35 جرام - كمية الطلب</label>
+      <label class="form-label text-right">سوبر جل 35 جرام - كمية الطلب</label>
       <div class="input-group mb-3">
         <span class="input-group-text qty-minus" id="qty-minus">-</span>
         <input name="total_qty" type="text" class="form-control" placeholder="Super" aria-label="Username"
