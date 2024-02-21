@@ -27,7 +27,7 @@
   <div class="container order_form">
     <form class="row g-3 needs-validation" method="post" novalidate>
       <label class="form-label text-right">سوبر جل 35 جرام - كمية الطلب</label>
-      <div class="input-group mb-3">
+      <div class="input-group mb-3" dir="ltr">
         <span class="input-group-text qty-minus" id="qty-minus">-</span>
         <input name="total_qty" type="text" class="form-control" placeholder="Super" aria-label="Username"
           aria-describedby="basic-addon1" id="qty-selector" value="1" readonly>
@@ -38,17 +38,17 @@
         <p id="qty-price-p">7.00</p>
         <p>ريال عُماني</p>
       </label>
-      <h2>توصيل</h2>
-      <div class="col-md-4">
+      <h2 class="text-right">توصيل</h2>
+      <div class="col-md-4 text-right">
         <label for="validationCustom01" class="form-label">الأسم الكامل</label>
         <input name="full_name" type="text" class="form-control" id="validationCustom01" required>
         <div class="invalid-feedback">
           من فضلك أدخل اسمك الكامل
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 text-right">
         <label for="validationCustomPhoneNumber" class="form-label">رقم التليفون</label>
-        <div class="input-group has-validation">
+        <div class="input-group has-validation" dir="ltr">
           <span class="input-group-text" id="inputGroupPrepend">+968</span>
           <input name="phone_number" type="text" class="form-control" id="validationCustomPhoneNumber"
             aria-describedby="inputGroupPrepend" required>
@@ -57,42 +57,42 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 text-right">
         <label for="validationCustomPhoneNumber" class="form-label">بريد إلكتروني</label>
         <div class="input-group has-validation">
           <input name="email" type="text" class="form-control" id="validationCustomEmail" placeholder="(خياري)"
             aria-describedby="inputGroupPrepend">
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <label for="validationCustom03" class="form-label">دولة</label>
         <input name="country" type="text" class="form-control" id="validationCustom03" value="عُمان" required disabled>
         <div class="invalid-feedback">
           الرجاء إدخال الدولة
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <label for="validationCustom04" class="form-label">مدينة</label>
         <input name="city" type="text" class="form-control" id="validationCustom04" required>
         <div class="invalid-feedback">
           الرجاء إدخال المدينة
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <label for="validationCustom06" class="form-label">منطقة</label>
         <input name="area" type="text" class="form-control" id="validationCustom06" required>
         <div class="invalid-feedback">
           الرجاء إدخال المنطقة
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <label for="validationCustom05" class="form-label">شارع</label>
         <input name="street" type="text" class="form-control" id="validationCustom05" required>
         <div class="invalid-feedback">
           الرجاء إدخال الشارع
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <label for="validationCustom07" class="form-label">رقم المبنى</label>
         <input name="house_number" type="text" class="form-control" id="validationCustom07" required>
         <div class="invalid-feedback">
