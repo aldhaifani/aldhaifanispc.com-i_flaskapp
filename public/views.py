@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, url_for
 import os
 import requests
 
@@ -38,6 +38,18 @@ def send_message(msg):
 
 
 views = Blueprint("views", __name__)
+
+"""
+
+Favicon
+
+"""
+
+
+@views.route("/favicon.ico")
+def favicon():
+    return url_for("static", filename="images/logo.png")
+
 
 """
 
