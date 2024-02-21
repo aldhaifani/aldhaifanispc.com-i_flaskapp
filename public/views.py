@@ -1,13 +1,6 @@
-from flask import Blueprint, render_template
+from flask import Blueprint
 
 views = Blueprint("views", __name__)
-
-
-@views.route("/")
-@views.route("/home")
-@views.route("/home/")
-def landing_page():
-    return render_template("landing_page.html")
 
 
 @views.route("/en")
