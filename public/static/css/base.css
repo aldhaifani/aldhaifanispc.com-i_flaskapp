@@ -1,0 +1,181 @@
+/*===================
+  Fonts & Variables
+===================*/
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,500&family=Inter+Tight:ital,wght@0,400;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+:root {
+	--primary: #f9b51e;
+	--dark: #1f2148;
+	--secondary: #d3d2d2;
+	--white-color: #ffffff;
+}
+
+/*===============
+    Global
+===============*/
+body {
+	background-color: var(--white-color);
+	font-family: 'Inter Tight', sans-serif;
+	color: var(--text-color);
+	width: 100vw;
+	overflow-x: hidden;
+}
+a {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+
+button {
+	cursor: pointer;
+}
+
+.btn-primary {
+	background: var(--primary);
+	border: none;
+	color: var(--dark);
+	padding: 8px 15px;
+	border-radius: 40px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+}
+
+.btn-primary:hover {
+	background: var(--primary);
+	border: none;
+	color: var(--dark);
+	opacity: 0.8;
+}
+
+/*===============
+    NavBar
+===============*/
+nav {
+	-webkit-box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.21);
+	-moz-box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.21);
+	box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.21);
+	background: var(--white-color);
+}
+
+.navbar-brand img {
+	width: 45px;
+	height: 40px;
+}
+
+.brand_logo__text {
+	font-size: 30px;
+	font-family: 'Archivo', sans-serif;
+	font-weight: 100;
+}
+
+/*===============
+    Lang Btn
+===============*/
+.language_btn_container {
+	margin-top: 80px;
+	padding-top: 1rem;
+	font-size: 15px;
+}
+
+.btn-lang {
+	border: 2px solid var(--primary);
+	background-color: var(--white-color);
+	color: var(--dark);
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	padding: 5px 15px;
+	border-radius: 20px;
+	transition: all ease-in-out 0.1s;
+}
+
+.btn-lang:hover {
+	background-color: var(--primary);
+	color: var(--white-color);
+}
+
+.btn-ar {
+	font-family: 'Cairo', sans-serif;
+}
+
+/*============
+    Line
+============*/
+.hr-container {
+	margin: 1rem 0;
+	width: 100vw;
+	text-align: center;
+}
+
+.hr-text {
+	background: linear-gradient(to right, transparent, #1f2148, transparent);
+	width: 80%;
+	height: 0.02rem;
+}
+
+/*============
+    Footer
+============*/
+.footer {
+	padding-top: 2rem;
+	background: var(--dark);
+	color: var(--white-color);
+	bottom: 0;
+}
+
+.footer a {
+	color: var(--white-color);
+	text-decoration: none;
+}
+
+.footer a:hover {
+	color: var(--primary);
+	text-decoration: none;
+}
+
+.footer_logo img {
+	width: 40px;
+	height: 35px;
+}
+.footer_logo__text {
+	font-size: 25px;
+	font-family: 'Archivo', sans-serif;
+	font-weight: 100;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 576px) {
+	.custom_title1 {
+		font-size: 1.5rem;
+	}
+	.custom_title2 {
+		font-size: 1rem;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+	.btn-primary {
+		padding: 6px 12px;
+		border-radius: 40px;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width: 992px) {
+	.custom_title1 {
+		font-size: 2rem;
+	}
+	.custom_title2 {
+		font-size: 1.5rem;
+	}
+
+	/*--- NavBar ---*/
+	.navbar-brand img {
+		width: 40px;
+		height: 35px;
+	}
+	.brand_logo__text {
+		font-size: 26px;
+	}
+}

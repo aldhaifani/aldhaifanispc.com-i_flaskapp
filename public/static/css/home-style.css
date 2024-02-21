@@ -1,0 +1,135 @@
+/*===============
+    Hero
+===============*/
+.hero {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	width: 100%;
+}
+.hero .row {
+	align-items: center;
+}
+
+.hero .outstand__text {
+	color: var(--primary);
+}
+
+.hero-img-max {
+	max-width: 390px;
+	width: 100%;
+	max-height: 270px;
+	height: 100%;
+}
+
+/*===============
+    Who we are
+===============*/
+.who-we-are {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.we_title {
+	color: var(--primary);
+}
+
+.who-we-are .fa-solid {
+	color: var(--primary);
+}
+
+/*============
+    Features
+============*/
+.features {
+	padding-top: 2rem;
+	padding-bottom: 3rem;
+	background: var(--primary);
+	width: 100vw;
+}
+
+.features-img-max {
+	max-width: 620px;
+	width: 100%;
+	max-height: 155px;
+	height: 100%;
+}
+
+.features .fa-solid {
+	color: var(--dark);
+}
+
+.features .btn-primary {
+	background-color: var(--dark);
+	color: var(--primary);
+}
+
+/*============
+    Envt
+============*/
+.envt {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	width: 100vw;
+}
+
+.envt-img-max {
+	max-width: 265px;
+	width: 100%;
+	max-height: 400px;
+	height: 100%;
+}
+
+.envt_title {
+	font-size: 30px;
+}
+
+.envt_p {
+	font-size: 20px;
+}
+
+/*===================
+    Responsiveness
+====================*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 576px) {
+	/*--- Hero ---*/
+	.hero {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		text-align: center;
+	}
+	.hero .hero__p {
+		text-align: left;
+	}
+
+	/*--- Envt ---*/
+	.envt_title {
+		font-size: 24px;
+	}
+	.envt_p {
+		font-size: 15px;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+	.envt_title {
+		font-size: 27px;
+	}
+	.envt_p {
+		font-size: 18px;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width: 992px) {
+	/*--- Hero ---*/
+	.hero {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+	.hero .hero__p {
+		font-size: 1rem;
+	}
+}

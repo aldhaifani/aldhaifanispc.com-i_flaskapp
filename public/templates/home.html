@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block title %}Super Gel - Pesticides for cockroaches and ants{% endblock %}
+
+{% block page_stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home-style.css') }}" />
+{% endblock %}
+
+{% block page_body %}
+<!-- Hero -->
+<div class="container hero">
+  <div class="row d-felx justify-content-center" style="row-gap: 1.5rem">
+    <div class="col-md-6">
+      <h1 class="fw-bold custom_title1">
+        Elevate your space with
+        <span class="outstand__text">Super Gel</span>, where efficacy
+        meets excellence.
+      </h1>
+      <p class="lead text-secondary hero__p md-text-center">
+        Rise above traditional spraying methods and embrace a superior
+        solution that's odorless, environmentally friendly, and sets a new
+        standard in pest control.
+      </p>
+      <a href="/i/en/contact_us" class="btn btn-primary">Order Now</a>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="{{ url_for('static', filename='images/syringe.png') }}" alt="banner" class="img-fluid hero-img-max" />
+    </div>
+  </div>
+</div>
+<!-- Line -->
+<div class="hr-container">
+  <hr class="hr-text" />
+</div>
+<!-- Who we are -->
+<div class="container who-we-are">
+  <div class="row d-flex justify-content-center" style="row-gap: 1.5rem">
+    <div class="col-12 d-flex flex-column" style="row-gap: 2rem">
+      <div class="row">
+        <div class="col">
+          <h1 class="fw-bold we_title custom_title1 text-center">
+            AL Dhaifani Trading and Investment Co.
+          </h1>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center align-start" style="column-gap: 2rem">
+        <div class="col-md-3">
+          <div class="row align-middle">
+            <div class="col">
+              <h2 class="custom_title1">Mission</h2>
+            </div>
+            <div class="col-2">
+              <i class="fa-solid fa-crosshairs fa-xl" style="bottom: 0"></i>
+            </div>
+          </div>
+          <p class="text-justify">
+            To offer cutting-edge and practical pest management solutions
+            to homes and businesses, promoting pest-free surroundings.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <div class="row align-middle">
+            <div class="col">
+              <h2 class="custom_title1">Objective</h2>
+            </div>
+            <div class="col-2">
+              <i class="fa-solid fa-bullseye fa-xl" style="bottom: 0"></i>
+            </div>
+          </div>
+          <p class="text-justify">
+            To combine innovation, customer satisfaction, and
+            environmental responsibility to lead the industry in producing
+            state-of-the-art pest control solutions and establish new
+            benchmarks for quality.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <div class="row align-middle">
+            <div class="col">
+              <h2 class="custom_title1">Vision</h2>
+            </div>
+            <div class="col-2">
+              <i class="fa-solid fa-eye fa-xl" style="bottom: 0"></i>
+            </div>
+          </div>
+          <p class="text-justify">
+            To pioneer the future of pest control manufacturing, we
+            foresee a world in which our innovative solutions redefine
+            industry standards, promote sustainability, and exceed
+            consumer expectations.
+          </p>
+        </div>
+      </div>
+      <div class="row align-center justify-content-center">
+        <a href="/i/en/who_we_are" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Features -->
+<div class="features">
+  <div class="container">
+    <div class="row d-flex justify-content-center" style="row-gap: 1.5rem">
+      <div class="col-12 text-center">
+        <img src="{{ url_for('static', filename='images/logo-blue.png') }}" alt="banner"
+          class="img-fluid features-img-max" />
+      </div>
+      <div class="col-12 text-center align-middl">
+        <div class="row d-flex justify-content-evenly align-start" style="row-gap: 1rem">
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">Unparalleled Effectiveness</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              Super Gel delivers swift and thorough pest elimination,
+              addressing roaches and ants with precision. Its cutting-edge
+              formulation ensures a superior level of efficacy.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">Environmentally Safe</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-earth-africa fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              Crafted with a commitment to sustainability, Super Gel is
+              environmentally safe. It minimizes ecological impact,
+              providing a responsible alternative to traditional pest
+              control methods.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">Odorless Formula</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-virus-slash fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              Experience pest control without the unpleasant odors. Super
+              Gel's formula is odorless, creating a discreet and
+              comfortable environment while effectively tackling pest
+              infestations.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">User-Friendly Application</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-user-group fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              Designed for ease of use, Super Gel simplifies pest control.
+              The convenient syringe application allows for targeted
+              placement, ensuring maximum effectiveness with minimal
+              effort.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col d-flex justify-content-start">
+                <h2 class="custom_title2">Long-Lasting Protection</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-shield fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              Super Gel provides extended protection against roaches and
+              ants, offering a sustained defense after application. Its
+              unique formulation creates a lasting barrier, preventing
+              reinfestation and ensuring peace of mind for an extended
+              period. With Super Gel, experience a persistent shield
+              against pests, reducing the need for frequent reapplication
+              and delivering enduring pest control efficacy.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">
+                  Superior to Traditional Spraying
+                </h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-crown fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              Step into a new era of pest management by choosing Super Gel
+              over traditional spraying methods. This advanced solution
+              offers heightened efficiency without the inconveniences
+              associated with traditional approaches.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row align-center justify-content-center">
+        <a href="/i/en/how_to_use" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Envt -->
+<div class="container envt">
+  <div class="row d-felx justify-content-center" style="row-gap: 1.5rem; column-gap: 1.5rem">
+    <div class="col-md-5 text-center">
+      <img src="{{ url_for('static', filename='images/leafs.jpg') }}" alt="banner" class="img-fluid envt-img-max" />
+    </div>
+    <div class="col-md-7 text-center">
+      <h1 class="fw-bold envt_title">
+        Caring for the Environment and Syringe Disposal
+      </h1>
+      <p class="lead text-justify envt_p">
+        Environmental responsibility is integral to our ethos. Super Gel's
+        eco-friendly formulation minimizes its impact on the planet. After
+        use, dispose of the syringe carefully to further contribute to
+        sustainability. Secure the cap, place it in a durable plastic bag,
+        seal tightly, and discard it in regular household trash following
+        local waste management guidelines. By handling the disposal
+        responsibly, you play a crucial role in preserving the environment
+        while benefiting from the unparalleled pest control efficacy of
+        Super Gel.
+      </p>
+      <a href="/i/en/how_to_use" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
