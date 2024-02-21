@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+</head>
+
+<body>
+  <script>
+    var userLang = navigator.language || navigator.userLanguage;
+    var ar_codes = [
+      'ar',
+      'ar-001',
+      'ar-AE',
+      'ar-BH',
+      'ar-DJ',
+      'ar-DZ',
+      'ar-EG',
+      'ar-EH',
+      'ar-ER',
+      'ar-IL',
+      'ar-IQ',
+      'ar-JO',
+      'ar-KM',
+      'ar-KW',
+      'ar-LB',
+      'ar-LY',
+      'ar-MA',
+      'ar-MR',
+      'ar-OM',
+      'ar-PS',
+      'ar-QA',
+      'ar-SA',
+      'ar-SD',
+      'ar-SO',
+      'ar-SS',
+      'ar-SY',
+      'ar-TD',
+      'ar-TN',
+      'ar-YE',
+    ];
+
+    if (ar_codes.includes(userLang)) {
+      url = '/ar/home';
+    } else {
+      url = '/en/home';
+    }
+
+    window.location.href = url;
+  </script>
+</body>
+
+</html>

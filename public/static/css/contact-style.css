@@ -1,0 +1,21 @@
+/*===============
+    Contact
+===============*/
+.contact-container {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 4rem;
+	min-height: 50vh;
+}
+
+.contact-header {
+	margin-bottom: 4rem;
+}
+
+.contact-item {
+	display: flex;
+	flex-direction: column;
+	height: 90px;
+	justify-content: space-evenly;
+	row-gap: 1rem;
+}

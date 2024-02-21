@@ -1,0 +1,29 @@
+/*===============
+    Order Now
+===============*/
+.order_form {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+	max-width: 800px;
+}
+
+.qty-plus,
+.qty-minus {
+	cursor: pointer;
+}
+.qty-minus {
+	background-color: rgb(233, 86, 86);
+}
+.qty-plus {
+	background-color: rgb(61, 231, 140);
+}
+
+.qty-plus:hover,
+.qty-minus:hover {
+	opacity: 0.9;
+}
+
+.flash-container {
+  margin-top: 2rem;
+}

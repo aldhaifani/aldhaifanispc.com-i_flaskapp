@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% set meta_description = "" %}
+
+{% block title %}Super Gel - Pesticides for cockroaches and ants{% endblock %}
+
+{% block page_stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/order_now-style.css') }}" />
+{% endblock %}
+
+{% block page_body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="container">
+  <div class="alert alert-{{ category }} flash-container" role="alert">
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div class="container">
+  <div class="container order_form">
+    <form class="row g-3 needs-validation" method="post" novalidate>
+      <label class="form-label">Super Gel 35g - Order quantity</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text qty-minus" id="qty-minus">-</span>
+        <input name="total_qty" type="text" class="form-control" placeholder="Super" aria-label="Username"
+          aria-describedby="basic-addon1" id="qty-selector" value="1" disabled>
+        <span class="input-group-text qty-plus" id="qty-plus">+</span>
+      </div>
+      <label class="qty-price d-flex" style="column-gap: 0.7rem;">
+        <p>Total price: </p>
+        <p id="qty-price-p">7.00</p>
+        <p>OMR</p>
+      </label>
+      <h2>Delivery</h2>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Full Name</label>
+        <input name="full_name" type="text" class="form-control" id="validationCustom01" required>
+        <div class="invalid-feedback">
+          Please enter your full name
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustomPhoneNumber" class="form-label">Phone Number</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">+968</span>
+          <input name="phone_number" type="text" class="form-control" id="validationCustomPhoneNumber"
+            aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Please enter your phone number
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustomPhoneNumber" class="form-label">Email</label>
+        <div class="input-group has-validation">
+          <input name="email" type="text" class="form-control" id="validationCustomEmail" placeholder="(Optional)"
+            aria-describedby="inputGroupPrepend">
+          <div class="invalid-feedback">
+            Please enter your email
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Country</label>
+        <input name="country" type="text" class="form-control" id="validationCustom03" value="Oman" required disabled>
+        <div class="invalid-feedback">
+          Please provide a valid Country.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom04" class="form-label">City</label>
+        <input name="city" type="text" class="form-control" id="validationCustom04" required>
+        <div class="invalid-feedback">
+          Please provide a valid City.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom06" class="form-label">Area</label>
+        <input name="area" type="text" class="form-control" id="validationCustom06" required>
+        <div class="invalid-feedback">
+          Please provide a valid Area.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom05" class="form-label">Street</label>
+        <input name="street" type="text" class="form-control" id="validationCustom05" required>
+        <div class="invalid-feedback">
+          Please provide a valid Street.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom07" class="form-label">House Number</label>
+        <input name="house_number" type="text" class="form-control" id="validationCustom07" required>
+        <div class="invalid-feedback">
+          Please provide a valid House Number.
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" style="margin-top: 1rem;">Order</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/order_now.js') }}"></script>
+{% endblock %}

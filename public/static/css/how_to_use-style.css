@@ -1,0 +1,118 @@
+/*===============
+    Header
+===============*/
+.header {
+	margin-top: 5rem;
+	padding-top: 5vh;
+	background-image: url('../images/we_are_bg_header.png');
+	background-size: cover;
+	height: 60vh;
+	position: relative;
+	overflow: hidden;
+	letter-spacing: 0.3rem;
+}
+
+.header:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-image: url('../images/who_we_are_header_wave-bottom.svg');
+	height: 275px;
+}
+
+/*===============
+    Accordion
+===============*/
+.how_to_use_intro_text {
+	text-align: justify;
+}
+
+.how_to_use-container {
+	padding-top: 2rem;
+	padding-bottom: 4rem;
+}
+
+.container .accordion {
+	width: auto;
+	margin: auto;
+	box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+}
+
+.container .accordion .accordion-item {
+	border-color: #efa31d;
+}
+
+#accordionExample .accordion-item .accordion-header .accordion-button {
+	background: #1d5b79;
+	color: #fff;
+	box-shadow: none;
+}
+
+.accordion .accordion-item .accordion-header .accordion-button::after {
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}
+
+#accordionExampleOne .accordion-item .accordion-header {
+	background: #468b97;
+}
+
+#accordionExampleOne .accordion-item:first-child .accordion-header {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#accordionExampleOne .accordion-item:last-child .accordion-header {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+#accordionExampleOne .accordion-item .accordion-header .accordion-button,
+#accordionExampleTwo .accordion-item .accordion-header .accordion-button,
+#accordionExampleFour .accordion-item .accordion-header .accordion-button,
+#accordionExampleSix .accordion-item .accordion-header .accordion-button {
+	background: #468b97;
+}
+
+#accordionExampleOneTwo .accordion-item .accordion-header,
+#accordionExampleOneTwo .accordion-item .accordion-header .accordion-button {
+	background: #ef6262;
+}
+
+#accordionExampleOneTwo .accordion-item {
+	border-color: #fff;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 576px) {
+	/*--- header ---*/
+	.header {
+		margin-top: 1rem;
+		padding-top: 1vh;
+		height: 20vh;
+	}
+
+	/*--- Accordion ---*/
+	.accordion-body {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.accordion-container {
+		padding: 0;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+	/*--- header ---*/
+	.header {
+		margin-top: 3rem;
+		padding-top: 3vh;
+		height: 45vh;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width: 992px) {
+	/*--- header ---*/
+}

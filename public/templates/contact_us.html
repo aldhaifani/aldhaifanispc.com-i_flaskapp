@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% set meta_description = "AL Dhaifani Trading and Investment SPC Co is a pesticides for cockroaches and ants
+manufacturer based in the Sultanate of Oman. Super Gel is our flagship product, easy to use, odorless, and
+environmentally friendly pesticide for cockroach and ants in the form of paste. Order Super Gel." %}
+
+{% block title %}Super Gel - Pesticides for cockroaches and ants{% endblock %}
+
+{% block page_stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact-style.css') }}" />
+{% endblock %}
+
+{% block page_body %}
+<!-- Hero -->
+<div class="container contact-container">
+	<div class="row" style="row-gap: 1rem">
+		<div class="col-12 text-center contact-header">
+			<h2>AL Dhaifani Trading and Investment Co.</h2>
+		</div>
+		<div class="col-lg-3 col-md-6 col-12 text-center contact-item">
+			<div class="contact-icon">
+				<i class="fa-solid fa-location-dot fa-2xl"></i>
+			</div>
+			<div class="contact-text">
+				AL Misfat Industrial, Muscat, Sultanate of Oman
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-12 text-center contact-item">
+			<div class="contact-icon">
+				<i class="fa-solid fa-phone fa-2xl"></i>
+			</div>
+			<div class="contact-text">
+				+968 9062 0008 <br />
+				+968 7934 3000
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-12 text-center contact-item">
+			<div class="contact-icon">
+				<i class="fa-brands fa-square-whatsapp fa-2xl"></i>
+			</div>
+			<div class="contact-text">
+				WhatsApp:
+				<a href="https://wa.me/message/VUQIVNBQ4FLQD1">+968 9062 0008</a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-12 text-center contact-item">
+			<div class="contact-icon">
+				<i class="fa-solid fa-envelope fa-2xl"></i>
+			</div>
+			<div class="contact-text">
+				info@aldhaifanispc.com
+				<br />
+				staff@aldhaifanispc.com
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

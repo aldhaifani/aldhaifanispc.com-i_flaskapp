@@ -1,0 +1,50 @@
+/*===============
+    Header
+===============*/
+.header {
+	margin-top: 5vh;
+	padding-top: 15vh;
+	background-image: url('../images/we_are_bg_header.png');
+	background-size: cover;
+	height: 65vh;
+	position: relative;
+	overflow: hidden;
+	letter-spacing: 0.3rem;
+}
+
+.header:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-image: url('../images/who_we_are_header_wave-bottom.svg');
+	height: 275px;
+}
+
+/*===============
+    list
+===============*/
+.who_we_are_list {
+	padding-top: 3rem;
+	padding-bottom: 5rem;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 576px) {
+	/*--- header ---*/
+	.header {
+		margin-top: 2vh;
+		padding-top: 10vh;
+		height: 45vh;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+	/*--- header ---*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width: 992px) {
+	/*--- header ---*/
+}

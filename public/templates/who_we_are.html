@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% set meta_description = "Who are the people behind Super Gel, the product of AL Dhaifani Trading and Investment SPC
+Co." %}
+
+{% block title %}Super Gel - AL Dhaifani Trading and Investment Co, Who We Are?{% endblock %}
+
+{% block page_stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/who_we_are-style.css') }}" />
+{% endblock %}
+
+{% set active_page = "who_we_are" -%}
+
+{% block page_body %}
+<!-- Hero -->
+<div class="header">
+  <div class="header-container container">
+    <div class="row text-center">
+      <div class="col">
+        <h1>Who We Are</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Who We Are List -->
+<div class="container who_we_are_list">
+  <div class="row text-center justify-content-between" style="row-gap: 1.5rem">
+    <div class="col-12 text-center">
+      <p class="lead intro_text text-justify">
+        Welcome to Al Dhaifani Trading and Investment Co, a distinguished
+        leader in the manufacturing industry with a rich legacy of
+        innovation and excellence. Our story unfolds as a testament to our
+        unwavering commitment to delivering cutting-edge solutions that
+        transcend conventional boundaries. Established to redefine the
+        landscape of pest control, Al Dhaifani Trading and Investment Co
+        has emerged as a trusted name, serving the diverse needs of
+        communities across the region.
+      </p>
+    </div>
+    <div class="col-lg-6 col-12">
+      <h3 class="list_title">Our Legacy of Excellence</h3>
+      <p class="lead list_text text-justify">
+        Founded on the principles of innovation, sustainability, and
+        customer-centricity, Al Dhaifani Trading and Investment Co has
+        consistently strived for excellence since its inception. Our
+        legacy is not just a timeline but a journey of pushing boundaries,
+        introducing game-changing solutions, and continuously evolving to
+        meet the dynamic demands of our discerning clientele.
+      </p>
+    </div>
+    <div class="col-lg-6 col-12">
+      <h3 class="list_title">Super Gel - Precision in Pest Control</h3>
+      <p class="lead list_text text-justify">
+        At the heart of our commitment to innovation stands Super Gel, our
+        flagship pest control solution. More than just a product, Super
+        Gel epitomizes precision in pest management. Crafted with
+        expertise and backed by advanced formulations, Super Gel stands as
+        an effective, environmentally safe, and user-friendly alternative
+        to traditional pest control methods.
+      </p>
+      <a href="/i/en/how_to_use" class="btn btn-primary">Read More</a>
+    </div>
+    <div class="col-lg-6 col-12">
+      <h3 class="list_title">Our Commitment to Sustainability</h3>
+      <p class="lead list_text text-justify">
+        Beyond products, our commitment extends to sustainability. Al
+        Dhaifani Trading and Investment Co actively seeks eco-friendly
+        formulations, minimizes environmental impact, and embraces
+        responsible manufacturing practices. Super Gel exemplifies this
+        commitment, providing effective pest control while contributing to
+        a greener planet.
+      </p>
+    </div>
+    <div class="col-lg-6 col-12">
+      <h3 class="list_title">Our Vision for the Future</h3>
+      <p class="lead list_text text-justify">
+        Looking ahead, our vision is to continue leading the industry in
+        innovation, sustainability, and customer satisfaction. Al Dhaifani
+        Trading and Investment Co aspires to be more than a manufacturer –
+        we aim to be a catalyst for positive change, setting new standards
+        in the manufacturing and pest control sectors.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
