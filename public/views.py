@@ -14,13 +14,22 @@ def send_message(msg):
     )
 
     try:
-        print("here")
         result = requests.get(url, timeout=15)
-        flash("Order placed successfully! We will  contact you soon.", "success")
+        flash(
+            "Order placed successfully! We will  contact you as soon as possible.",
+            "success",
+        )
+        flash(
+            "تم تقديم الطلب بنجاح! سنتواصل معك بأقرب وقت ممكن.",
+            "success",
+        )
     except requests.exceptions.Timeout:
-        print("here2")
         flash(
             "Failed to place your order! Please try again or contact us +968-90620008.",
+            "danger",
+        )
+        flash(
+            "فشل في تقديم طلبك! يرجى المحاولة مرة أخرى أو الاتصال بنا +968-90620008.",
             "danger",
         )
         result = ""
@@ -48,17 +57,13 @@ def home_en():
 @views.route("/en/who_we_are")
 @views.route("/en/who_we_are/")
 def who_we_are_en():
-    return render_template(
-        "who_we_are.html", page_link="ar/who_we_are", page_lang="en"
-    )
+    return render_template("who_we_are.html", page_link="ar/who_we_are", page_lang="en")
 
 
 @views.route("/en/how_to_use")
 @views.route("/en/how_to_use/")
 def how_to_use_en():
-    return render_template(
-        "how_to_use.html", page_link="ar/how_to_use", page_lang="en"
-    )
+    return render_template("how_to_use.html", page_link="ar/how_to_use", page_lang="en")
 
 
 @views.route("/en/order_now", methods=["GET", "POST"])
@@ -77,9 +82,7 @@ def order_now_en():
 @views.route("/en/contact_us")
 @views.route("/en/contact_us/")
 def contact_us_en():
-    return render_template(
-        "contact_us.html", page_link="ar/contact_us", page_lang="en"
-    )
+    return render_template("contact_us.html", page_link="ar/contact_us", page_lang="en")
 
 
 @views.route("/en/terms_and_conditions")
