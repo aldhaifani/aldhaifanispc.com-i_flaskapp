@@ -43,9 +43,10 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				{% set navigation_bar = [ ('/i/en', 'home', 'Home'), ('/i/en/who_we_are',
-				'who_we_are', 'Who We Are'), ('/i/en/how_to_use', 'how_to_use', 'How To
-				Use'), ('/i/en/order_now', 'order_now', 'Order Now'), ('/i/en/contact_us', 'contact_us', 'Contact Us') ] -%} {%
+				{% set navigation_bar = [ ('/i/{{ page_lang }}', 'home', 'Home'), ('/i/{{ page_lang }}/who_we_are',
+				'who_we_are', 'Who We Are'), ('/i/{{ page_lang }}/how_to_use', 'how_to_use', 'How To
+				Use'), ('/i/{{ page_lang }}/order_now', 'order_now', 'Order Now'), ('/i/{{ page_lang }}/contact_us',
+				'contact_us', 'Contact Us') ] -%} {%
 				set
 				active_page = active_page|default('home') -%}
 
@@ -64,7 +65,7 @@
 		<!-- Language Button -->
 		<div class="row text-center language_btn_container">
 			<div class="col">
-				<a href="/i/ar"><button type="button" class="btn-lang btn-ar" dir="auto"
+				<a href="/i/{{ page_link }}"><button type="button" class="btn-lang btn-ar" dir="auto"
 						style="font-family: 'Cairo', sans-serif">
 						عربي
 					</button></a>
@@ -89,23 +90,23 @@
 							<div class="col-lg-6 col-12 text-center justifiy-content-center">
 								<div class="row text-center" style="row-gap: 1rem">
 									<div class="col-lg-5 col-12">
-										<a href="/i/en">Home</a>
+										<a href="/i/{{ page_lang }}">Home</a>
 									</div>
 									<div class="col-lg-5 col-12">
-										<a href="/i/en/order_now">Order Now</a>
+										<a href="/i/{{ page_lang }}/order_now">Order Now</a>
 									</div>
 									<div class="col-lg-5 col-12">
-										<a href="/i/en/who_we_are">Who We Are</a>
+										<a href="/i/{{ page_lang }}/who_we_are">Who We Are</a>
 									</div>
 									<div class="col-lg-5 col-12">
-										<a href="/i/en/how_to_use">How To Use</a>
+										<a href="/i/{{ page_lang }}/how_to_use">How To Use</a>
 									</div>
 									<div class="col-lg-5 col-12">
-										<a href="/i/en/contact_us">Contact Us</a>
+										<a href="/i/{{ page_lang }}/contact_us">Contact Us</a>
 									</div>
 
 									<div class="col-lg-5 col-12">
-										<a href="/i/en">Disclaimers</a>
+										<a href="/i/{{ page_lang }}/terms_and_conditions">Terms & Conditions</a>
 									</div>
 								</div>
 							</div>
