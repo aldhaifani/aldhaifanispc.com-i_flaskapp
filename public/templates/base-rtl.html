@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  {% set meta_description = "شركة الذيفاني للتجارة والاستثمار ش.ش.و. شركة متخصصة في تصنيع مبيدات الصراصير والنمل ومقرها
+  في سلطنة عمان. سوبر جل هو منتجنا الرئيسي، سهل الاستخدام، عديم الرائحة، وصديق للبيئة
+  مبيد للصراصير والنمل على شكل معجون." %}
+  <meta name="description" content={{ meta_description }} />
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <!--============== FontAwesome ================-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base-rtl.css') }}" />
+  {% block page_stylesheet %}{% endblock %}
+</head>
+
+<body>
+  <div style="overflow-x: hidden">
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand align-middle text-center" href="#">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="brand logo"
+            class="d-inline-block align-top" />
+          <span class="brand_logo__text mb-4">سوبر جل</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        {% if page_lang == "ar" %}
+        {% set navigation_bar = [ ('/i/ar', 'home', 'الصفحة الرئيسية'), ('/i/ar/who_we_are',
+        'who_we_are', 'من نحن'), ('/i/ar/how_to_use', 'how_to_use', 'كيفية الإستخدام'), ('/i/ar/order_now', 'order_now',
+        'أطلب الأن'), ('/i/ar/contact_us',
+        'contact_us', 'تواصل معنا') ] -%}
+        {% else %}
+        {% set navigation_bar = [ ('/i/en', 'home', 'الصفحة الرئيسية'), ('/i/en/who_we_are',
+        'who_we_are', 'من نحن'), ('/i/en/how_to_use', 'how_to_use', 'كيفية الإستخدام'), ('/i/en/order_now', 'order_now',
+        'أطلب الأن'), ('/i/en/contact_us',
+        'contact_us', 'تواصل معنا') ] -%}
+        {% endif %}
+
+        {% set active_page = active_page|default('home') -%}
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto text-left">
+            {% for href, id, caption in navigation_bar %}
+            <li{% if id==active_page %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+              <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+              </li>
+              {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Language Button -->
+    <div class="row text-center language_btn_container">
+      <div class="col">
+        <a href="/i/{{ page_link }}"><button type="button" class="btn-lang btn-ar" dir="auto"
+            style="font-family: 'Cairo', sans-serif">
+            English
+          </button></a>
+      </div>
+    </div>
+
+    {% block page_body %}{% endblock %}
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row justify-content-center" style="row-gap: 4rem">
+          <div class="col-12">
+            <div class="row justify-content-between" style="row-gap: 3rem">
+              <div class="col-lg-3 col-12">
+                <a class="footer_logo align-middle text-center" href="#">
+                  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="brand logo"
+                    class="d-inline-block align-top" />
+                  <span class="footer_logo__text mb-4">سوبر جل</span>
+                </a>
+              </div>
+              <div class="col-lg-6 col-12 text-center justifiy-content-center">
+                <div class="row text-center" style="row-gap: 1rem">
+                  <div class="col-lg-5 col-12">
+                    <a href="/i/{{ page_lang }}">الصفحة الرئيسية</a>
+                  </div>
+                  <div class="col-lg-5 col-12">
+                    <a href="/i/{{ page_lang }}/order_now">أطلب الأن</a>
+                  </div>
+                  <div class="col-lg-5 col-12">
+                    <a href="/i/{{ page_lang }}/who_we_are">من نحن</a>
+                  </div>
+                  <div class="col-lg-5 col-12">
+                    <a href="/i/{{ page_lang }}/how_to_use">كيفية الإستخدام</a>
+                  </div>
+                  <div class="col-lg-5 col-12">
+                    <a href="/i/{{ page_lang }}/contact_us">تواصل معنا</a>
+                  </div>
+
+                  <div class="col-lg-5 col-12">
+                    <a href="/i/{{ page_lang }}/terms_and_conditions">الشروط والأحكام</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 footer_copyright">
+            <p class="text-secondary text-center" style="font-size: 14px">
+              حقوق الطبع و النشر © 2024 شركة الذيفاني للتجارة والاستثمار .
+              جميع الحقوق محفوظة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% block scripts %}{% endblock %}
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

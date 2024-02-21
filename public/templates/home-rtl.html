@@ -1,0 +1,232 @@
+{% extends "base-rtl.html" %}
+
+{% block title %}سوبر جل - معجون لإبادة الصراصير والنمل{% endblock %}
+
+{% block page_stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home-style.css') }}" />
+{% endblock %}
+
+{% block page_body %}
+<!-- Hero -->
+<div class="container hero">
+  <div class="row d-felx justify-content-center" style="row-gap: 1.5rem">
+    <div class="col-md-6">
+      <h1 class="fw-bold custom_title1">
+        حافظ على رقي مساحتك بإستخدام
+        <span class="outstand__text">سوبر جل،</span> حيث تلتقي الفعالية مع
+        التميز.
+      </h1>
+      <p class="lead text-secondary hero__p md-text-center">
+        ارتق فوق طرق الرش التقليدية واختار حلا فائقا عديم الرائحة وصديق
+        للبيئة ويضع معيارا جديدا في مكافحة الآفات.
+      </p>
+      <a href="/i/ar/contact_us" class="btn btn-primary">اطلب الأن</a>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="{{ url_for('static', filename='images/syringe.png') }}" alt="banner" class="img-fluid hero-img-max" />
+    </div>
+  </div>
+</div>
+<!-- Line -->
+<div class="hr-container">
+  <hr class="hr-text" />
+</div>
+<!-- Who we are -->
+<div class="container who-we-are">
+  <div class="row d-flex justify-content-center" style="row-gap: 1.5rem">
+    <div class="col-12 d-flex flex-column" style="row-gap: 2rem">
+      <div class="row">
+        <div class="col">
+          <h1 class="fw-bold we_title custom_title1 text-center">
+            شركة الذيفاني للتجارة والاستثمار
+          </h1>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center align-start" style="column-gap: 2rem">
+        <div class="col-md-3">
+          <div class="row align-middle">
+            <div class="col">
+              <h2 class="custom_title1">مهمتنا</h2>
+            </div>
+            <div class="col-2">
+              <i class="fa-solid fa-crosshairs fa-xl" style="bottom: 0"></i>
+            </div>
+          </div>
+          <p class="text-justify">
+            تقديم حلول متطورة وعملية لمكافحة الآفات للمنازل والشركات ،
+            وتعزيز محيط خال من الآفات المزعجة.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <div class="row align-middle">
+            <div class="col">
+              <h2 class="custom_title1">هدفنا</h2>
+            </div>
+            <div class="col-2">
+              <i class="fa-solid fa-bullseye fa-xl" style="bottom: 0"></i>
+            </div>
+          </div>
+          <p class="text-justify">
+            الجمع بين الابتكار ورضا العملاء والمسؤولية البيئية لقيادة
+            الصناعة في إنتاج أحدث حلول مكافحة الآفات ووضع معايير جديدة
+            للجودة.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <div class="row align-middle">
+            <div class="col">
+              <h2 class="custom_title1">رؤيتنا</h2>
+            </div>
+            <div class="col-2">
+              <i class="fa-solid fa-eye fa-xl" style="bottom: 0"></i>
+            </div>
+          </div>
+          <p class="text-justify">
+            لريادة مستقبل تصنيع مكافحة الآفات ، نتوقع عالما تعيد فيه
+            حلولنا المبتكرة تعريف معايير الصناعة ، وتعزز الاستدامة ،
+            وتتجاوز توقعات المستهلكين.
+          </p>
+        </div>
+      </div>
+      <div class="row align-center justify-content-center">
+        <a href="/i/ar/who_we_are" class="btn btn-primary col-6">اقراء المزيد</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Features -->
+<div class="features">
+  <div class="container">
+    <div class="row d-flex justify-content-center" style="row-gap: 1.5rem">
+      <div class="col-12 text-center">
+        <img src="{{ url_for('static', filename='images/logo-blue.png') }}" alt="banner"
+          class="img-fluid features-img-max" />
+      </div>
+      <div class="col-12 text-center align-middl">
+        <div class="row d-flex justify-content-evenly align-start" style="row-gap: 1rem">
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">فعالية لا مثيل لها</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              يوفر سوبر جل القضاء السريع والشامل على الآفات ، ومعالجة
+              الصراصير والنمل بدقة. تضمن تركيبته المتطورة مستوى فائقا من
+              الفعالية.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">آمن بيئيا</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-earth-africa fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              وضع مع الالتزام بالاستدامة ، سوبر جل آمن بيئيا. إنه يقلل من
+              التأثير البيئي ، ويوفر بديلا ذي مسؤولية عن طرق مكافحة الآفات
+              التقليدية.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">تركيبة عديمة الرائحة</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-virus-slash fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              جرب مكافحة الآفات بدون روائح كريهة. تركيبة سوبر جل عديمة
+              الرائحة ، مما يخلق بيئة مريحة مع معالجة تفشي الآفات بشكل
+              فعال.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">سهل الإستخدام</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-user-group fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              مصمم لسهولة الاستخدام ، سوبر جل يبسط مكافحة الآفات. تطبيق
+              الحقنة مريح يسمح لوضع القطرات في الاماكن المستهدفة بدقة ،
+              وضمان أقصى قدر من الفعالية مع الحد الأدنى من الجهد.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col d-flex justify-content-start">
+                <h2 class="custom_title2">حماية طويلة الأمد</h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-shield fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              يوفر الجل الفائق حماية ممتدة ضد الصراصير والنمل ، مما يوفر
+              دفاعا مستداما بعد التطبيق. صيغته الفريدة تخلق حاجزا دائما ،
+              وتمنع إعادة الانتشار وتضمن راحة البال لفترة طويلة من الزمن.
+              مع سوبر جل ، جرب درعا ثابتا ضد الآفات ، مما يقلل من الحاجة
+              إلى إعادة التطبيق المتكرر ويوفر فعالية دائمة لمكافحة الآفات.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="row align-middle text-left">
+              <div class="col">
+                <h2 class="custom_title2">
+                  تفوق على طرق الرش التقليدية
+                </h2>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-crown fa-2xl"></i>
+              </div>
+            </div>
+            <p class="text-justify">
+              ادخل إلى عصر جديد في مكافحة الآفات المزعجة عن طريق اختيار
+              الجل الفائق على طرق الرش التقليدية. يوفر هذا الحل المتقدم
+              كفاءة عالية دون المضايقات المرتبطة بالطرق التقليدية.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row align-center justify-content-center">
+        <a href="/i/ar/how_to_use" class="btn btn-primary col-6">اقراء المزيد</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Envt -->
+<div class="container envt">
+  <div class="row d-felx justify-content-center" style="row-gap: 1.5rem; column-gap: 1.5rem">
+    <div class="col-md-5 text-center">
+      <img src="{{ url_for('static', filename='images/leafs.jpg') }}" alt="banner" class="img-fluid envt-img-max" />
+    </div>
+    <div class="col-md-7 text-center">
+      <h1 class="fw-bold envt_title">
+        رعاية البيئة والتخلص من الحقن
+      </h1>
+      <p class="lead text-justify envt_p">
+        المسؤولية البيئية جزء لا يتجزأ من مهمتنا. تركيبة سوبر جل الصديقة
+        للبيئة تقلل من تأثيرها على البيئية. بعد الاستخدام ، تخلص من الحقن
+        بعناية لزيادة المساهمة في الاستدامة. قم بتأمين الغطاء ، ووضعه في
+        كيس بلاستيكي ، وأغلقه بإحكام ، وتخلص منه في القمامة المنزلية
+        العادية باتباع إرشادات إدارة النفايات المحلية. من خلال التعامل مع
+        التخلص بمسؤولية ، تلعب دورا حاسما في الحفاظ على البيئة مع
+        الاستفادة من فعالية مكافحة الآفات التي لا مثيل لها من سوبر جل.
+      </p>
+      <a href="/i/ar/how_to_use" class="btn btn-primary">اقراء المزيد</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

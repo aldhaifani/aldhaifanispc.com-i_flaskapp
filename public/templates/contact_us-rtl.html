@@ -1,0 +1,56 @@
+{% extends "base-rtl.html" %}
+
+{% set meta_description = "شركة الذيفاني للتجارة والاستثمار ش.ش.و. شركة متخصصة في تصنيع مبيدات الصراصير والنمل ومقرها
+في سلطنة عمان. سوبر جل هو منتجنا الرئيسي، سهل الاستخدام، عديم الرائحة، وصديق للبيئة
+مبيد للصراصير والنمل على شكل معجون." %}
+
+{% block title %}سوبر جل - تواصل معنا{% endblock %}
+
+{% block page_stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact-style.css') }}" />
+{% endblock %}
+
+{% block page_body %}
+<!-- Hero -->
+<div class="container contact-container">
+  <div class="row" style="row-gap: 1rem">
+    <div class="col-12 text-center contact-header">
+      <h2>شركة الذيفاني للتجارة والاستثمار</h2>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 text-center contact-item">
+      <div class="contact-icon">
+        <i class="fa-solid fa-location-dot fa-2xl"></i>
+      </div>
+      <div class="contact-text">المسفاة الصناعية، مسقط، سلطنة عمان</div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 text-center contact-item">
+      <div class="contact-icon">
+        <i class="fa-solid fa-phone fa-2xl"></i>
+      </div>
+      <div class="contact-text" dir="ltr">
+        +968 9062 0008 <br />
+        +968 7934 3000
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 text-center contact-item">
+      <div class="contact-icon">
+        <i class="fa-brands fa-square-whatsapp fa-2xl"></i>
+      </div>
+      <div class="contact-text">
+        واتساب:
+        <a href="https://wa.me/message/VUQIVNBQ4FLQD1" dir="ltr">+968 9062 0008</a>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 text-center contact-item">
+      <div class="contact-icon">
+        <i class="fa-solid fa-envelope fa-2xl"></i>
+      </div>
+      <div class="contact-text">
+        info@aldhaifanispc.com
+        <br />
+        staff@aldhaifanispc.com
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

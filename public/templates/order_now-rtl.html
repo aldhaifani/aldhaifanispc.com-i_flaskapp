@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% set meta_description = "Order Super Gel Now" %}
+{% set meta_description = "اطلب سوبر جل الآن" %}
 
-{% block title %}Super Gel - Order Now{% endblock %}
+{% block title %}سوبر جل - اطلب الآن{% endblock %}
 
 {% block page_stylesheet %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/order_now-style.css') }}" />
@@ -23,7 +23,7 @@
 <div class="container">
   <div class="container order_form">
     <form class="row g-3 needs-validation" method="post" novalidate>
-      <label class="form-label">Super Gel 35g - Order quantity</label>
+      <label class="form-label">سوبر جل 35 جرام - كمية الطلب</label>
       <div class="input-group mb-3">
         <span class="input-group-text qty-minus" id="qty-minus">-</span>
         <input name="total_qty" type="text" class="form-control" placeholder="Super" aria-label="Username"
@@ -31,73 +31,73 @@
         <span class="input-group-text qty-plus" id="qty-plus">+</span>
       </div>
       <label class="qty-price d-flex" style="column-gap: 0.7rem;">
-        <p>Total price: </p>
+        <p>السعر الإجمالي:</p>
         <p id="qty-price-p">7.00</p>
-        <p>OMR</p>
+        <p>ريال عُماني</p>
       </label>
-      <h2>Delivery</h2>
+      <h2>توصيل</h2>
       <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Full Name</label>
+        <label for="validationCustom01" class="form-label">الأسم الكامل</label>
         <input name="full_name" type="text" class="form-control" id="validationCustom01" required>
         <div class="invalid-feedback">
-          Please enter your full name
+          من فضلك أدخل اسمك الكامل
         </div>
       </div>
       <div class="col-md-4">
-        <label for="validationCustomPhoneNumber" class="form-label">Phone Number</label>
+        <label for="validationCustomPhoneNumber" class="form-label">رقم التليفون</label>
         <div class="input-group has-validation">
           <span class="input-group-text" id="inputGroupPrepend">+968</span>
           <input name="phone_number" type="text" class="form-control" id="validationCustomPhoneNumber"
             aria-describedby="inputGroupPrepend" required>
           <div class="invalid-feedback">
-            Please enter your phone number
+            يرجى إدخال رقم الهاتف الخاص بك
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <label for="validationCustomPhoneNumber" class="form-label">Email</label>
+        <label for="validationCustomPhoneNumber" class="form-label">بريد إلكتروني</label>
         <div class="input-group has-validation">
-          <input name="email" type="text" class="form-control" id="validationCustomEmail" placeholder="(Optional)"
+          <input name="email" type="text" class="form-control" id="validationCustomEmail" placeholder="(خياري)"
             aria-describedby="inputGroupPrepend">
         </div>
       </div>
       <div class="col-md-6">
-        <label for="validationCustom03" class="form-label">Country</label>
-        <input name="country" type="text" class="form-control" id="validationCustom03" value="Oman" required disabled>
+        <label for="validationCustom03" class="form-label">دولة</label>
+        <input name="country" type="text" class="form-control" id="validationCustom03" value="عُمان" required disabled>
         <div class="invalid-feedback">
-          Please provide a valid Country.
+          الرجاء إدخال الدولة
         </div>
       </div>
       <div class="col-md-6">
-        <label for="validationCustom04" class="form-label">City</label>
+        <label for="validationCustom04" class="form-label">مدينة</label>
         <input name="city" type="text" class="form-control" id="validationCustom04" required>
         <div class="invalid-feedback">
-          Please provide a valid City.
+          الرجاء إدخال المدينة
         </div>
       </div>
       <div class="col-md-6">
-        <label for="validationCustom06" class="form-label">Area</label>
+        <label for="validationCustom06" class="form-label">منطقة</label>
         <input name="area" type="text" class="form-control" id="validationCustom06" required>
         <div class="invalid-feedback">
-          Please provide a valid Area.
+          الرجاء إدخال المنطقة
         </div>
       </div>
       <div class="col-md-6">
-        <label for="validationCustom05" class="form-label">Street</label>
+        <label for="validationCustom05" class="form-label">شارع</label>
         <input name="street" type="text" class="form-control" id="validationCustom05" required>
         <div class="invalid-feedback">
-          Please provide a valid Street.
+          الرجاء إدخال الشارع
         </div>
       </div>
       <div class="col-md-6">
-        <label for="validationCustom07" class="form-label">House Number</label>
+        <label for="validationCustom07" class="form-label">رقم المبنى</label>
         <input name="house_number" type="text" class="form-control" id="validationCustom07" required>
         <div class="invalid-feedback">
-          Please provide a valid House Number.
+          الرجاء إدخال رقم المبنى
         </div>
       </div>
       <div class="col-12">
-        <button class="btn btn-primary" type="submit" style="margin-top: 1rem;">Order</button>
+        <button class="btn btn-primary" type="submit" style="margin-top: 1rem;">اطلب</button>
       </div>
     </form>
   </div>
