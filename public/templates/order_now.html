@@ -12,17 +12,16 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 {% for category, message in messages %}
-{% if message == "Order placed successfully! We will contact you as soon as possible." or message == "Failed to place
-your order! Please try again or contact us +968-90620008." %}
+{% if category == "success" %}
 <div class="container">
-  <div class="alert alert-{{ category }} flash-container" role="alert">
-    {{ message }}
+  <div class="alert alert-{{ category }} flash-container text-right" role="alert">
+    Order placed successfully! We will contact you as soon as possible.
   </div>
 </div>
 {% else %}
 <div class="container">
-  <div class="alert alert-info flash-container" role="alert">
-    {{ message }}
+  <div class="alert alert-{{ category }} flash-container text-right" role="alert">
+    Failed to place your order! Please try again or contact us +968-90620008.
   </div>
 </div>
 {% endif %}

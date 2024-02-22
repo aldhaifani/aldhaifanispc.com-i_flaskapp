@@ -12,11 +12,16 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 {% for category, message in messages %}
-{% if message == "تم تقديم الطلب بنجاح! سنتواصل معك بأقرب وقت ممكن." or message == "فشل في تقديم طلبك! يرجى المحاولة مرة
-أخرى أو الاتصال بنا +968-90620008." %}
+{% if category == "success" %}
 <div class="container">
   <div class="alert alert-{{ category }} flash-container text-right" role="alert">
-    {{ message }}
+    تم تقديم الطلب بنجاح! سنتواصل معك بأقرب وقت ممكن.
+  </div>
+</div>
+{% else %}
+<div class="container">
+  <div class="alert alert-{{ category }} flash-container text-right" role="alert">
+    فشل في تقديم طلبك! يرجى المحاولة مرة أخرى أو الاتصال بنا +968-90620008.
   </div>
 </div>
 {% endif %}
