@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, url_for
-from tg_bot import send_message
+from .tg_bot import send_message
 
 
 views = Blueprint("views", __name__)
