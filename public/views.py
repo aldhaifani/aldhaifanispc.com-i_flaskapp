@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, url_for
+from flask import Blueprint, render_template, request, url_for, flash
 from .tg_bot import send_message
 
 
@@ -52,7 +52,12 @@ def order_now_en():
         for key in data.keys():
             data_str += key.replace("_", " ").capitalize() + ": "
             data_str += data.get(key) + "\n"
-        send_message(data_str)
+
+        send_message_data = send_message(data_str)
+
+        for msg in send_message_data["flash_msg"]:
+            flash(msg, send_message_data["flash_category"])
+
     return render_template("order_now.html", page_link="ar/order_now", page_lang="en")
 
 
