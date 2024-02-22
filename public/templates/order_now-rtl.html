@@ -10,26 +10,26 @@
 
 {% block page_body %}
 {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% set break_flash_loop = False %}
-    {% for category, message in messages %}
-      {% if category == "success" and break_flash_loop == False %}
-        <div class="container">
-          <div class="alert alert-{{ category }} flash-container text-right" role="alert">
-            تم تقديم الطلب بنجاح! سنتواصل معك بأقرب وقت ممكن.
-          </div>
-        </div>
-        {% set break_flash_loop = True %}
-      {% elif break_flash_loop == False %}
-        <div class="container">
-          <div class="alert alert-{{ category }} flash-container text-right" role="alert">
-            فشل في تقديم طلبك! يرجى المحاولة مرة أخرى أو الاتصال بنا +968-90620008.
-          </div>
-        </div>
-        {% set break_flash_loop = True %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+{% if messages %}
+{% set break_flash_loop = false %}
+{% for category, message in messages %}
+{% if category == "success" and break_flash_loop == false %}
+<div class="container">
+  <div class="alert alert-{{ category }} flash-container text-right" role="alert">
+    تم تقديم الطلب بنجاح! سنتواصل معك بأقرب وقت ممكن.
+  </div>
+</div>
+{% set break_flash_loop = true %}
+{% elif break_flash_loop == false %}
+<div class="container">
+  <div class="alert alert-{{ category }} flash-container text-right" role="alert">
+    فشل في تقديم طلبك! يرجى المحاولة مرة أخرى أو الاتصال بنا +968-90620008.
+  </div>
+</div>
+{% set break_flash_loop = true %}
+{% endif %}
+{% endfor %}
+{% endif %}
 {% endwith %}
 <div class="container">
   <div class="container order_form">
