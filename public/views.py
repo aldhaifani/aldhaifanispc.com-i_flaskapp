@@ -54,10 +54,9 @@ def order_now_en():
             data_str += data.get(key) + "\n"
 
         send_message_data = send_message(data_str)
-        print(send_message_data)
-        print(request.method)
 
         for msg in send_message_data["flash_msg"]:
+            print(msg)
             flash(msg, send_message_data["flash_category"])
 
     return render_template("order_now.html", page_link="ar/order_now", page_lang="en")
