@@ -19,6 +19,12 @@ your order! Please try again or contact us +968-90620008." %}
     {{ message }}
   </div>
 </div>
+{% else %}
+<div class="container">
+  <div class="alert alert-danger flash-container" role="alert">
+    No message
+  </div>
+</div>
 {% endif %}
 {% endfor %}
 {% endif %}
