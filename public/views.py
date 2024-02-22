@@ -55,6 +55,7 @@ def order_now_en():
 
         send_message_data = send_message(data_str)
         print(send_message_data)
+        print(request.method)
 
         for msg in send_message_data["flash_msg"]:
             flash(msg, send_message_data["flash_category"])
