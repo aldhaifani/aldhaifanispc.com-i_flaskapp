@@ -54,10 +54,7 @@ def order_now_en():
             data_str += data.get(key) + "\n"
 
         send_message_data = send_message(data_str)
-
-        for msg in send_message_data["flash_msg"]:
-            print(msg)
-            flash(msg, send_message_data["flash_category"])
+        flash("", send_message_data["flash_category"])
 
     return render_template("order_now.html", page_link="ar/order_now", page_lang="en")
 
@@ -118,7 +115,10 @@ def order_now_ar():
         for key in data.keys():
             data_str += key.replace("_", " ").capitalize() + ": "
             data_str += data.get(key) + "\n"
-        send_message(data_str)
+
+        send_message_data = send_message(data_str)
+        flash("flash_msg", send_message_data["flash_category"])
+
     return render_template(
         "order_now-rtl.html", page_link="en/order_now", page_lang="ar"
     )
