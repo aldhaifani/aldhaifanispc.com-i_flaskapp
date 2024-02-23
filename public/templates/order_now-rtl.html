@@ -11,22 +11,22 @@
 {% block page_body %}
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
-{% set break_flash_loop = false %}
+{% set break_flash_loop = "0" %}
 {% for category, message in messages %}
-{% if category == "success" and break_flash_loop == false %}
+{% if category == "success" and break_flash_loop == "0" %}
 <div class="container">
   <div class="alert alert-{{ category }} flash-container text-right" role="alert">
     تم تقديم الطلب بنجاح! سنتواصل معك بأقرب وقت ممكن.
   </div>
 </div>
-{% set break_flash_loop = true %}
-{% elif break_flash_loop == false %}
+{% set break_flash_loop = "1" %}
+{% elif break_flash_loop == "0" %}
 <div class="container">
   <div class="alert alert-{{ category }} flash-container text-right" role="alert">
     فشل في تقديم طلبك! يرجى المحاولة مرة أخرى أو الاتصال بنا +968-90620008.
   </div>
 </div>
-{% set break_flash_loop = true %}
+{% set break_flash_loop = "1" %}
 {% endif %}
 {% endfor %}
 {% endif %}
