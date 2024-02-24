@@ -49,6 +49,26 @@ button {
 	opacity: 0.8;
 }
 
+/* Spinner */
+.spinner-wrapper {
+	background-color: #eaeaea;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s;
+}
+
+.spinner-border {
+	height: 60px;
+	width: 60px;
+}
+
 /*===============
     NavBar
 ===============*/

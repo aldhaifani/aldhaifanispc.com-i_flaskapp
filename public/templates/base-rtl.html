@@ -31,6 +31,13 @@
 </head>
 
 <body>
+  <!-- Loader -->
+  <div class="spinner-wrapper">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
   <div style="overflow-x: hidden">
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
@@ -144,6 +151,17 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
 
+  <script>
+    const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
+
+    window.addEventListener('load', () => {
+      spinnerWrapperEl.style.opacity = '0';
+
+      setTimeout(() => {
+        spinnerWrapperEl.style.display = 'None';
+      }, 200);
+    });
+  </script>
 </body>
 
 </html>
