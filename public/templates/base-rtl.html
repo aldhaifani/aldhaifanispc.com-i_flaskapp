@@ -67,7 +67,7 @@
         {% set active_page = active_page|default('home') -%}
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto text-left">
+          <ul class="navbar-nav mr-auto text-right pr-3">
             {% for href, id, caption in navigation_bar %}
             <li{% if id==active_page %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
               <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
