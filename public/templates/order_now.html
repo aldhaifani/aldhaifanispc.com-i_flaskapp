@@ -17,7 +17,8 @@
 {% if category == "success" and ns.break_flash_loop == "0" %}
 <div class="container">
   <div class="alert alert-{{ category }} flash-container" role="alert">
-    Order placed successfully! We will contact you as soon as possible.
+    Order placed successfully! We will contact you as soon as possible. <br />
+    Order ID: {{ order_id }}
   </div>
 </div>
 {% set ns.break_flash_loop = "1" %}

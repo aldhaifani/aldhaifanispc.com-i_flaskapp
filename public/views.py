@@ -1,19 +1,34 @@
-from flask import Blueprint, render_template, request, url_for, flash
 from .tg_bot import send_message
+from flask import Blueprint, render_template, request, flash
+
+
+import os
+import base64
+import pymysql.cursors
+import datetime
+import pytz
 
 
 views = Blueprint("views", __name__)
 
 """
 
-Favicon
+Database connection
 
 """
 
-
-@views.route("/favicon.ico")
-def favicon():
-    return url_for("static", filename="images/favicon.ico")
+connection = pymysql.connect(
+    host="72.167.207.37",
+    user=base64.b64decode(os.environ.get("orders_db_usr").encode("utf-8")).decode(
+        "utf-8"
+    ),
+    password=base64.b64decode(os.environ.get("orders_db_pass").encode("utf-8")).decode(
+        "utf-8"
+    ),
+    database="orders",
+    charset="utf8mb4",
+    cursorclass=pymysql.cursors.DictCursor,
+)
 
 
 """
@@ -48,6 +63,7 @@ def how_to_use_en():
 def order_now_en():
     if request.method == "POST":
         data = request.form
+
         data_str = ""
         for key in data.keys():
             data_str += key.replace("_", " ").capitalize() + ": "
@@ -56,7 +72,38 @@ def order_now_en():
         send_message_data = send_message(data_str)
         flash("", send_message_data["flash_category"])
 
-    return render_template("order_now.html", page_link="ar/order_now", page_lang="en")
+        lastorder_id = 0
+
+        if send_message_data.get("flash_category") == "success":
+
+            with connection.cursor() as cursor:
+                # Create a new record
+                date_today = datetime.datetime.now(pytz.timezone("Asia/Muscat"))
+                sql = "INSERT INTO `orders_tbl`(`date`, `order_qty`, `customer_name`, `phone_number`, `email`,`location`, `completed`) VALUES (%s,%s,%s,%s,%s,%s)"
+                cursor.execute(
+                    sql,
+                    (
+                        date_today.strftime("%b %d, %Y"),
+                        data.get("total_qty"),
+                        data.get("full_name"),
+                        data.get("phone_number"),
+                        data.get("email"),
+                        f"{data.get('country')}, {data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
+                        0,
+                    ),
+                )
+
+            lastorder_id = f"#{date_today.strftime('%Y%m')}{connection.insert_id()}"
+            connection.commit()
+
+            data_str += lastorder_id + "\n"
+
+    return render_template(
+        "order_now.html",
+        page_link="ar/order_now",
+        page_lang="en",
+        order_id=lastorder_id,
+    )
 
 
 @views.route("/en/contact_us")
