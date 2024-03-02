@@ -61,6 +61,7 @@ def how_to_use_en():
 @views.route("/en/order_now", methods=["GET", "POST"])
 @views.route("/en/order_now/", methods=["GET", "POST"])
 def order_now_en():
+    lastorder_id = 0
     if request.method == "POST":
         data = request.form
 
@@ -71,8 +72,6 @@ def order_now_en():
 
         send_message_data = send_message(data_str)
         flash("", send_message_data["flash_category"])
-
-        lastorder_id = 0
 
         if send_message_data.get("flash_category") == "success":
 
