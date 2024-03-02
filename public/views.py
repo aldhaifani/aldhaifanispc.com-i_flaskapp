@@ -83,7 +83,7 @@ def order_now_en():
                     sql,
                     (
                         date_today.strftime("%b %d, %Y"),
-                        data.get("total_qty"),
+                        str(data.get("total_qty")),
                         data.get("full_name"),
                         data.get("phone_number"),
                         data.get("email"),
