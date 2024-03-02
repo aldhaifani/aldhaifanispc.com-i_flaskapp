@@ -78,16 +78,19 @@ def order_now_en():
             with connection.cursor() as cursor:
                 # Create a new record
                 date_today = datetime.datetime.now(pytz.timezone("Asia/Muscat"))
-                sql = "INSERT INTO `orders_tbl`(`date`, `order_qty`, `customer_name`, `phone_number`, `email`,`location`, `completed`) VALUES ({},{},{},{},{},{},{})".format(
-                    date_today.strftime("%b %d, %Y"),
-                    data.get("total_qty"),
-                    data.get("full_name"),
-                    data.get("phone_number"),
-                    data.get("email"),
-                    f"{data.get('country')}, {data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
-                    0,
+                sql = "INSERT INTO `orders_tbl`(`date`, `order_qty`, `customer_name`, `phone_number`, `email`,`location`, `completed`) VALUES (%s,%s,%s,%s,%s,%s,%s)"
+                cursor.execute(
+                    sql,
+                    (
+                        date_today.strftime("%b %d, %Y"),
+                        data.get("total_qty"),
+                        data.get("full_name"),
+                        data.get("phone_number"),
+                        data.get("email"),
+                        f"{data.get('country')}, {data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
+                        0,
+                    ),
                 )
-                cursor.execute(sql)
 
             lastorder_id = f"#{date_today.strftime('%Y%m')}{connection.insert_id()}"
             connection.commit()
