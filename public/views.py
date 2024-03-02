@@ -87,7 +87,7 @@ def order_now_en():
                         data.get("full_name"),
                         data.get("phone_number"),
                         data.get("email"),
-                        f"{data.get('country')}, {data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
+                        f"{data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
                         0,
                     ),
                 )
