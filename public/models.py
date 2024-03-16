@@ -1,4 +1,4 @@
-from . import db
+from public import db
 
 
 def add_to_session(order):
@@ -18,6 +18,7 @@ class orders_tbl(db.Model):
     email = db.Column("email", db.String(100))
     location = db.Column("location", db.String(256))
     completed = db.Column("completed", db.Boolean, default=False)
+    notes = db.Column("notes", db.String(256))
 
     def __init__(
         self,
@@ -27,6 +28,7 @@ class orders_tbl(db.Model):
         phone_number,
         email,
         location,
+        notes="",
         completed=False,
     ):
         self.date = date
@@ -36,3 +38,4 @@ class orders_tbl(db.Model):
         self.email = email
         self.location = location
         self.completed = completed
+        self.notes = notes
