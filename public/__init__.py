@@ -2,8 +2,6 @@ from flask import Flask
 import os
 import base64
 
-from flask_sqlalchemy import SQLAlchemy
-
 
 def create_app():
     """Creates the flask app
@@ -35,4 +33,3 @@ def create_app():
 
 
 application = create_app()
-db = SQLAlchemy(application)
