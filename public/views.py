@@ -1,34 +1,13 @@
 from .tg_bot import send_message
+from .models import orders_tbl, add_to_session, commit_to_session
 from flask import Blueprint, render_template, request, flash
 
 
-import os
-import base64
-import pymysql.cursors
 import datetime
 import pytz
 
 
 views = Blueprint("views", __name__)
-
-"""
-
-Database connection
-
-"""
-
-connection = pymysql.connect(
-    host="72.167.207.37",
-    user=base64.b64decode(os.environ.get("orders_db_usr").encode("utf-8")).decode(
-        "utf-8"
-    ),
-    password=base64.b64decode(os.environ.get("orders_db_pass").encode("utf-8")).decode(
-        "utf-8"
-    ),
-    database="orders",
-    charset="utf8mb4",
-    cursorclass=pymysql.cursors.DictCursor,
-)
 
 
 """
@@ -74,28 +53,21 @@ def order_now_en():
         flash("", send_message_data["flash_category"])
 
         if send_message_data.get("flash_category") == "success":
+            date_today = datetime.datetime.now(pytz.timezone("Asia/Muscat"))
+            new_order = orders_tbl(
+                date=date_today.strftime("%b %d, %Y"),
+                order_qty=data.get("total_qty"),
+                customer_name=data.get("full_name"),
+                phone_number=data.get("phone_number"),
+                email=data.get("email"),
+                location=f"{data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
+            )
 
-            with connection.cursor() as cursor:
-                # Create a new record
-                date_today = datetime.datetime.now(pytz.timezone("Asia/Muscat"))
-                sql = "INSERT INTO `orders_tbl`(`date`, `order_qty`, `customer_name`, `phone_number`, `email`,`location`, `completed`) VALUES (%s,%s,%s,%s,%s,%s,%s)"
-                cursor.execute(
-                    sql,
-                    (
-                        date_today.strftime("%b %d, %Y"),
-                        data.get("total_qty"),
-                        data.get("full_name"),
-                        data.get("phone_number"),
-                        data.get("email"),
-                        f"{data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
-                        0,
-                    ),
-                )
+            add_to_session(new_order)
+            commit_to_session()
 
-            lastorder_id = f"#{date_today.strftime('%Y%m')}{connection.insert_id()}"
-            connection.commit()
-
-            data_str += lastorder_id + "\n"
+            lastorder_id = f"#{date_today.strftime('%Y%m')}{new_order.id}"
+            _ = send_message(lastorder_id)
 
     return render_template(
         "order_now.html",
