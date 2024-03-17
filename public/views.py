@@ -1,62 +1,16 @@
 from .tg_bot import send_message
 from flask import Blueprint, render_template, request, flash
-from . import application
-from flask_sqlalchemy import SQLAlchemy
+
+
+from .models import orders_tbl, session
+from sqlalchemy.exc import SQLAlchemyError
+
 
 import datetime
 import pytz
 
 
 views = Blueprint("views", __name__)
-
-
-"""
-
-DB model
-
-"""
-
-db = SQLAlchemy(application)
-
-
-def add_to_session(order):
-    db.session.add(order)
-
-
-def commit_to_session():
-    db.session.commit()
-
-
-class orders_tbl(db.Model):
-    id = db.Column("id", db.Integer, primary_key=True)
-    date = db.Column("date", db.String(50))
-    order_qty = db.Column("order_qty", db.Integer)
-    customer_name = db.Column("customer_name", db.String(50))
-    phone_number = db.Column("phone_number", db.String(50))
-    email = db.Column("email", db.String(100))
-    location = db.Column("location", db.String(256))
-    completed = db.Column("completed", db.Boolean, default=False)
-    notes = db.Column("notes", db.String(256))
-
-    def __init__(
-        self,
-        date,
-        order_qty,
-        customer_name,
-        phone_number,
-        email,
-        location,
-        notes="",
-        completed=False,
-    ):
-        self.date = date
-        self.order_qty = order_qty
-        self.customer_name = customer_name
-        self.phone_number = phone_number
-        self.email = email
-        self.location = location
-        self.completed = completed
-        self.notes = notes
 
 
 """
@@ -93,15 +47,7 @@ def order_now_en():
     if request.method == "POST":
         data = request.form
 
-        data_str = ""
-        for key in data.keys():
-            data_str += key.replace("_", " ").capitalize() + ": "
-            data_str += data.get(key) + "\n"
-
-        send_message_data = send_message(data_str)
-        flash("", send_message_data["flash_category"])
-
-        if send_message_data.get("flash_category") == "success":
+        try:
             date_today = datetime.datetime.now(pytz.timezone("Asia/Muscat"))
             new_order = orders_tbl(
                 date=date_today.strftime("%b %d, %Y"),
@@ -111,12 +57,15 @@ def order_now_en():
                 email=data.get("email"),
                 location=f"{data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
             )
+            session.add(new_order)
+            session.commit()
 
-            add_to_session(new_order)
-            commit_to_session()
+            send_message_data = send_message(str(new_order))
+            flash("", send_message_data["flash_category"])
 
             lastorder_id = f"#{date_today.strftime('%Y%m')}{new_order.id}"
-            _ = send_message(lastorder_id)
+        except SQLAlchemyError:
+            flash("", "danger")
 
     return render_template(
         "order_now.html",
@@ -176,18 +125,35 @@ def how_to_use_ar():
 @views.route("/ar/order_now", methods=["GET", "POST"])
 @views.route("/ar/order_now/", methods=["GET", "POST"])
 def order_now_ar():
+    lastorder_id = 0
     if request.method == "POST":
         data = request.form
-        data_str = ""
-        for key in data.keys():
-            data_str += key.replace("_", " ").capitalize() + ": "
-            data_str += data.get(key) + "\n"
 
-        send_message_data = send_message(data_str)
-        flash("flash_msg", send_message_data["flash_category"])
+        try:
+            date_today = datetime.datetime.now(pytz.timezone("Asia/Muscat"))
+            new_order = orders_tbl(
+                date=date_today.strftime("%b %d, %Y"),
+                order_qty=data.get("total_qty"),
+                customer_name=data.get("full_name"),
+                phone_number=data.get("phone_number"),
+                email=data.get("email"),
+                location=f"{data.get('city')}, {data.get('area')}, {data.get('street')}, Bld {data.get('house_number')}",
+            )
+            session.add(new_order)
+            session.commit()
+
+            send_message_data = send_message(str(new_order))
+            flash("", send_message_data["flash_category"])
+
+            lastorder_id = f"#{date_today.strftime('%Y%m')}{new_order.id}"
+        except SQLAlchemyError:
+            flash("", "danger")
 
     return render_template(
-        "order_now-rtl.html", page_link="en/order_now", page_lang="ar"
+        "order_now-rtl.html",
+        page_link="en/order_now",
+        page_lang="ar",
+        order_id=lastorder_id,
     )
 
 
