@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 import base64
 
@@ -33,3 +33,15 @@ def create_app():
 
 
 application = create_app()
+
+
+"""
+
+Error Handling
+
+"""
+
+
+@application.errorhandler(404)
+def page_not_found():
+    return render_template("404_error.html")
