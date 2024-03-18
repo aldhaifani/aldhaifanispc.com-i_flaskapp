@@ -3,6 +3,24 @@ import os
 import base64
 
 
+def page_not_found_handler():
+    """404 error handler
+
+    Returns:
+        template
+    """
+    return render_template("404_error.html")
+
+
+def server_error_handler():
+    """500 error handler
+
+    Returns:
+        template
+    """
+    return render_template("500_error.html")
+
+
 def create_app():
     """Creates the flask app
 
@@ -29,24 +47,11 @@ def create_app():
     )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+    # error handlers registration
+    app.register_error_handler(404, page_not_found_handler)
+    app.register_error_handler(500, server_error_handler)
+
     return app
 
 
 application = create_app()
-
-
-"""
-
-Error Handling
-
-"""
-
-
-@application.errorhandler(404)
-def page_not_found():
-    return render_template("404_error.html")
-
-
-@application.errorhandler(500)
-def server_error():
-    return render_template("500_error.html")
