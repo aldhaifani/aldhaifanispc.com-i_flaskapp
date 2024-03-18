@@ -92,6 +92,16 @@ def terms_and_conditions_en():
     )
 
 
+@views.route("/en/terms_guarantee")
+@views.route("/en/terms_guarantee/")
+def terms_guarantee_en():
+    return render_template(
+        "terms_guarantee.html",
+        page_link="ar/terms_guarantee",
+        page_lang="en",
+    )
+
+
 """
 
 Arabic routes
@@ -172,5 +182,15 @@ def terms_and_conditions_ar():
     return render_template(
         "terms_and_conditions-rtl.html",
         page_link="en/terms_and_conditions",
+        page_lang="ar",
+    )
+
+
+@views.route("/ar/terms_guarantee")
+@views.route("/ar/terms_guarantee/")
+def terms_guarantee_ar():
+    return render_template(
+        "terms_guarantee-rtl.html",
+        page_link="en/terms_guarantee",
         page_lang="ar",
     )
