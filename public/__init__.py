@@ -3,7 +3,7 @@ import os
 import base64
 
 
-def page_not_found_handler():
+def page_not_found_handler(e):
     """404 error handler
 
     Returns:
@@ -12,7 +12,7 @@ def page_not_found_handler():
     return render_template("404_error.html")
 
 
-def server_error_handler():
+def server_error_handler(e):
     """500 error handler
 
     Returns:
