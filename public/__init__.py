@@ -45,3 +45,8 @@ Error Handling
 @application.errorhandler(404)
 def page_not_found():
     return render_template("404_error.html")
+
+
+@application.errorhandler(500)
+def page_not_found():
+    return render_template("500_error.html")
