@@ -20,6 +20,7 @@ English routes
 """
 
 
+@views.route("/")
 @views.route("/en")
 @views.route("/en/")
 @views.route("/en/home")
