@@ -112,8 +112,12 @@
           Please provide a valid House Number.
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-12 text-center">
         <button class="btn btn-primary" type="save" style="margin-top: 1rem;">Order</button>
+        <p class="mt-2 text-muted terms_text d-flex justify-content-center"><a href="/i/en/terms_guarantee">Terms
+            of
+            Guarantee</a> &nbsp; and &nbsp; <a href="/i/en/terms_and_conditions" style="width: fit-content;"">Terms &
+            Conditions</a> &nbsp; Apply.</p>
       </div>
     </form>
   </div>
@@ -121,5 +125,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/order_now.js') }}"></script>
-{% endblock %}
+<script src=" {{ url_for('static', filename='js/order_now.js' ) }}"></script>
+            {% endblock %}

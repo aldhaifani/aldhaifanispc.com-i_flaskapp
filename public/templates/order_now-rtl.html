@@ -112,6 +112,9 @@
       </div>
       <div class="col-12 text-center">
         <button class="btn btn-primary" type="save" style="margin-top: 1rem; min-width:8rem;">اطلب</button>
+        <p class="mt-2 text-muted terms_text d-flex justify-content-center">تطبق &nbsp;<a href="/i/ar/terms_guarantee"
+            style="width: fit-content;">شروط الضمان</a> &nbsp; و &nbsp; <a href="/i/ar/terms_and_conditions"
+            style="width: fit-content;"">الشروط والأحكام</a>.</p>
       </div>
     </form>
   </div>
@@ -119,5 +122,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/order_now.js') }}"></script>
-{% endblock %}
+<script src=" {{ url_for('static', filename='js/order_now.js' ) }}"></script>
+            {% endblock %}

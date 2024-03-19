@@ -25,5 +25,14 @@
 }
 
 .flash-container {
-  margin-top: 2rem;
+	margin-top: 2rem;
+}
+
+.terms_text,
+.terms_text > a {
+	color: darkgrey;
+}
+
+.terms_text {
+	font-size: 11px;
 }
