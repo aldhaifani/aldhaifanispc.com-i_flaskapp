@@ -39,11 +39,11 @@ qty_minus.addEventListener('click', function () {
 		qty_selector.value = new_value;
 	}
 
-	qty_price.innerText = (new_value * 7.0).toFixed(2);
+	qty_price.innerText = (new_value * 5.0).toFixed(2);
 });
 
 qty_plus.addEventListener('click', function () {
 	let new_value = parseInt(qty_selector.value) + 1;
 	qty_selector.value = new_value;
-	qty_price.innerText = (new_value * 7.0).toFixed(2);
+	qty_price.innerText = (new_value * 5.0).toFixed(2);
 });
